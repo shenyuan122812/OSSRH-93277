@@ -147,9 +147,9 @@
 
     <!--项目在github或其它托管平台的地址-->
     <scm>
-        <connection>https://github.com/shenyuan122812/Jtar</connection>
-        <developerConnection>scm:git:ssh://git@github.com:shenyuan122812/Jtar.git</developerConnection>
-        <url>https://github.com/shenyuan122812/Jtar/tree/master</url>
+        <connection>https://github.com/shenyuan122812/OSSRH-93277</connection>
+        <developerConnection>scm:git:ssh://git@github.com:shenyuan122812/OSSRH-93277.git</developerConnection>
+        <url>https://github.com/shenyuan122812/OSSRH-93277/tree/master</url>
     </scm>
 
 
