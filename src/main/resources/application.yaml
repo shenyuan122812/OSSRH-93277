@@ -1,0 +1,42 @@
+# 项目名称
+project:
+   name: 国际货运
+   env : uat
+   tester: 沈源
+   host: https://www.wanandroid.com
+   paths:
+     testcase: org\jtar\testcase
+     data: data
+     files: files
+
+
+# 必须配置
+redis:
+  host: r-m5exxunofwlr65iivupd.redis.rds.aliyuncs.com
+  port: 6379
+  password: Sy122812
+
+database:
+  - type: mysql
+    switch: true
+    host: localhost
+    port: 3306
+    user: root
+    password: '123456'
+  - type: oracle
+    switch: true
+    host: localhost
+    port: 3306
+    user: root
+    password: '123456'
+
+# 通知类型 无 或者 dingTalk/飞书
+notice:
+  - type: dingTalk
+    switch: true
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=88f7755f94b30dcd7bfaff18eb7f1ca15380ba7f90a0eca3ad3a0fe9444e6bb7
+    secret: SEC806c014dea1d2bc558947547fabade2f957cbd2e64fdb26de15350f1e9932e46
+  - type: feiShu
+    switch: true
+    webhook: https://open.feishu.cn/open-apis/bot/v2/hook/6058cd4c-e746-4d73-91ae-cd58558a542d
+    secret: E1gCPyOmsWFQzbEQ3QsTt
