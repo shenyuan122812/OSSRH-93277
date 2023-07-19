@@ -7,9 +7,9 @@ import org.jtar.database.mysql.MySQLConfigurationImpl;
 import org.jtar.database.redis.RedisConfigurationImpl;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/8 22:31
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/8 22:31
+ * description
  */
 
 public class Test {

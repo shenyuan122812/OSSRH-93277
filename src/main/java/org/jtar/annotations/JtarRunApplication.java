@@ -3,7 +3,7 @@ package org.jtar.annotations;
 import java.lang.annotation.*;
 
 /**
- * @author Administrator
+ * author Administrator
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

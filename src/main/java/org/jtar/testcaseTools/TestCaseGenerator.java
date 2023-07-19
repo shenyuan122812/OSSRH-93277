@@ -18,18 +18,18 @@ import java.util.stream.Collectors;
 
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/12 0:17
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/12 0:17
+ * description
  */
 @Slf4j
 @SuppressWarnings("all")
 public class TestCaseGenerator {
     /**
      * 是否创建新的testcase
-     * @param createOrNot
+     * param createOrNot
      */
-    public  static  void   createOrNot(JtarRunType createSwitch){
+    public  static  void createOrNot(JtarRunType createSwitch){
       if (createSwitch.equals(JtarRunType.CAREATE_NEW_TESTCASE)){
           log.info("生成新的testcase");
          create();
@@ -124,7 +124,7 @@ public class TestCaseGenerator {
 
     /**
      * 获取testcase文件夹的路径
-     * @return
+     * return
      */
     public  static  String  achieveTestCasePath(){
         Object testcase = new YamlReader(FileType.APPLICATION_YAML).getValueByKey("project.paths.testcase");
@@ -138,7 +138,7 @@ public class TestCaseGenerator {
 
     /**
      * 获取data文件夹的路径
-     * @return
+     * return
      */
     public  static  String  achieveDataYamlPath(){
         Object data = new YamlReader(FileType.APPLICATION_YAML).getValueByKey("project.paths.data");
@@ -151,9 +151,9 @@ public class TestCaseGenerator {
 
     /**
      * 创建文件和文件夹
+     * param filePath
      */
     public  static  void  createFiles(String  filePath){
-
         File file = new File(filePath);
         File parentFile = file.getParentFile();
         if (!parentFile.exists()){
@@ -215,8 +215,8 @@ public class TestCaseGenerator {
 
     /**
      * 获取所有文件路径
-     * @param filePath
-     * @return
+     * param filePath
+     * return
      */
     public   static List<String> findFiles(String filePath){
         File file = new File(filePath);

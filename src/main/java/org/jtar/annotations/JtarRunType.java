@@ -1,9 +1,9 @@
 package org.jtar.annotations;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/11 21:35
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/11 21:35
+ * description
  */
 @SuppressWarnings("all")
 public enum JtarRunType {

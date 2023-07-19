@@ -11,9 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/11 16:52
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/11 16:52
+ * description
  */
 @Slf4j
 public class YamlReader {
@@ -46,10 +46,8 @@ public class YamlReader {
         }
     }
     /**
-     * get yaml property
-     *
-     * @param key
-     * @return
+     * param key
+     * return Object
      */
     public Object getValueByKey(String key) {
         String separator = ".";

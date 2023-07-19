@@ -5,7 +5,6 @@ import io.qameta.allure.*;
 import org.jtar.annotations.AnnotationUtils;
 import org.jtar.annotations.BindContent;
 import org.jtar.request.RestAssuredTool;
-import org.jtar.testcaseTools.BaseTest;
 import org.jtar.testcaseTools.TestCaseDto;
 import org.jtar.testcaseTools.TestCaseGenerator;
 import org.testng.annotations.Test;
@@ -15,14 +14,14 @@ import java.util.Map;
 
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/11 16:32
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/11 16:32
+ * description
  */
 @Epic("登录Epic")
 @Feature("登录Feature")
 @BindContent(dataFileName = "login.yaml")
-public class TestAA extends BaseTest {
+public class TestAA  {
 
 
     @Test

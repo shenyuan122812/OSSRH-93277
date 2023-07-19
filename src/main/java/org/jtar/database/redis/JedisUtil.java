@@ -16,12 +16,11 @@ public class JedisUtil {
 
     /**
      * 单个连接
-     *
-     * @param host
-     * @param port
-     * @return
+     * param host
+     * param port
+     * return
      */
-    public static Jedis cli_single(String host, int port,String password) {
+    public static Jedis cliSingle(String host, int port,String password) {
         Jedis jedis = new Jedis(host, port);
         jedis.auth(password);
         return  jedis;
@@ -29,12 +28,11 @@ public class JedisUtil {
 
     /**
      * 连接池
-     *
-     * @param host
-     * @param port
-     * @return
+     * param host
+     * param port
+     * return
      */
-    public static Jedis cli_pool(String host, int port) {
+    public static Jedis cliPool(String host, int port) {
         JedisPoolConfig config = new JedisPoolConfig();
         // 最大连接数
         config.setMaxTotal(10);

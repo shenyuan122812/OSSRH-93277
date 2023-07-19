@@ -13,8 +13,7 @@ import java.lang.annotation.*;
 public @interface NoticeConfiguration {
     /**
      * 通知类型
-     *
-     * @return
+     * return
      */
     NoticeType type() default NoticeType.DINGTALK;
 

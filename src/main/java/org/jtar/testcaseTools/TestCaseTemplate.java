@@ -1,9 +1,9 @@
 package org.jtar.testcaseTools;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/12 5:26
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/12 5:26
+ * description
  */
 
 public class TestCaseTemplate {
@@ -16,7 +16,6 @@ public class TestCaseTemplate {
             "import org.jtar.annotations.AnnotationUtils;\n" +
             "import org.jtar.annotations.BindContent;\n" +
             "import org.jtar.request.RestAssuredTool;\n" +
-            "import org.jtar.testcaseTools.BaseTest;\n" +
             "import org.jtar.testcaseTools.TestCaseDto;\n" +
             "import org.jtar.testcaseTools.TestCaseGenerator;\n" +
             "import org.testng.annotations.Test;\n" +
@@ -32,7 +31,7 @@ public class TestCaseTemplate {
             "@Epic(\"登录Epic\")\n" +
             "@Feature(\"登录Feature\")\n" +
             "@BindContent(dataFileName = \"login.yaml\")\n" +
-            "public class "+clazzName+" extends BaseTest {\n" +
+            "public class "+clazzName+"{\n" +
             "\n" +
             "\n" +
             "    @Test\n" +

@@ -6,18 +6,17 @@ import org.jtar.annotations.JtarRunType;
 import org.jtar.testcaseTools.TestCaseGenerator;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/11 20:29
- * @description 框架启动类
+ * author Allen.Shen
+ * createTime 2023/6/11 20:29
+ * description 框架启动类
  */
 @Slf4j
 public class JtarApplication {
 
     /**
      * 框架主启动方法
-     *
-     * @param primarySource
-     * @param args
+     * param primarySource
+     * param args
      */
     public static void run(Class<?> primarySource, String[] args) {
         JtarRunApplication jtarRunApplicationAnnotation = primarySource.getAnnotation(JtarRunApplication.class);
@@ -30,9 +29,8 @@ public class JtarApplication {
 
     /**
      * 检查run方法传入的参数 例如定义JtarRunApplication注解上的属性
-     *
-     * @param jtarRunApplication
-     * @param args
+     * param jtarRunApplication
+     * param args
      */
     public static void checkParameter(JtarRunApplication jtarRunApplication, String... args) {
         checkJtarRunApplicationAttributes(jtarRunApplication);
@@ -40,8 +38,7 @@ public class JtarApplication {
 
     /**
      * 检查JtarRunApplication注解上的参数
-     *
-     * @param jtarRunApplication
+     * param jtarRunApplication
      */
     public static void checkJtarRunApplicationAttributes(JtarRunApplication jtarRunApplication) {
 

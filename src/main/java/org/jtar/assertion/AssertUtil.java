@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/8 11:49
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/8 11:49
+ * description
  */
 @Slf4j
 public class AssertUtil {

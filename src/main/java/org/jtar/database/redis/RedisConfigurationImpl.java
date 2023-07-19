@@ -26,7 +26,7 @@ public class RedisConfigurationImpl implements DbConfiguration {
     public void check( ) {
         if (ObjectUtils.isNotEmpty(dataBaseDTO) &&DBEnum.REDIS.equals(dataBaseDTO.getDbType())){
             log.info("使用redis");
-            Jedis jedis = JedisUtil.cli_single(dataBaseDTO.getHost(), dataBaseDTO.getPort(), dataBaseDTO.getPasswd());
+            Jedis jedis = JedisUtil.cliSingle(dataBaseDTO.getHost(), dataBaseDTO.getPort(), dataBaseDTO.getPasswd());
         }else {
             log.info("不使用redis");
         }

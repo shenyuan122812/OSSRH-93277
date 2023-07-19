@@ -5,18 +5,14 @@ import java.net.NetworkInterface;
 import java.util.Enumeration;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/8 13:55
- * @description
+ * author Allen.Shen
+ * createTime 2023/6/8 13:55
+ * description
  */
 
 public class WebToolUtils {
 
-    /**
-     * 获取本地IP地址
-     *
-     * @throws Exception
-     */
+
     public static String getLocalIP() throws Exception {
         if (isWindowsOS()) {
             return InetAddress.getLocalHost().getHostAddress();
@@ -28,9 +24,8 @@ public class WebToolUtils {
 
     /**
      * 获取Linux下的IP地址
-     *
-     * @return IP地址
-     * @throws Exception
+     * return IP地址
+     * throws Exception
      */
     private static String getLinuxLocalIp() throws Exception {
         String ip = "";
@@ -59,8 +54,7 @@ public class WebToolUtils {
 
     /**
      * 判断操作系统是否是Windows
-     *
-     * @return
+     * return
      */
     public static boolean isWindowsOS() {
         boolean isWindowsOS = false;

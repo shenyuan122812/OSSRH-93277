@@ -10,26 +10,29 @@ import java.util.Map;
 
 @Slf4j
 public class AnnotationUtils {
-    /**
-     * 获取类上的BindContent注解内容dataFileName
-     * @param clazz
-     * @return
-     */
-    public  static  String  getBindContent(Class<?> clazz){
-
-        String dataFileName = clazz.getAnnotation(BindContent.class).dataFileName();
-        if (StringUtils.isBlank(dataFileName)){
-            log.error("类"+clazz+"上的dataFileName为空！");
-            return  null;
-
-        }else {
-            return  dataFileName;
-        }
-
-    }
+//    /**
+//     * 获取类上的BindContent注解内容dataFileName
+//     * param clazz
+//     * return
+//     */
+//    public  static  String  getBindContent(Class<?> clazz){
+//
+//        String dataFileName = clazz.getAnnotation(BindContent.class).dataFileName();
+//        if (StringUtils.isBlank(dataFileName)){
+//            log.error("类"+clazz+"上的dataFileName为空！");
+//            return  null;
+//
+//        }else {
+//            return  dataFileName;
+//        }
+//
+//    }
 
     /**
      * 获取方法名上面注解 内容包括casedId，dataFileName
+     * param clazz
+     * param name
+     * return map
      */
     public  static Map<String, String> getBindContent(Class<?> clazz, String name)  {
         Map<String,String> map = new HashMap<>();

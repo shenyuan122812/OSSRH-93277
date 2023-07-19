@@ -31,9 +31,9 @@ import static io.restassured.RestAssured.given;
 
 
 /**
- * @author Allen.Shen
- * @createTime 2023/5/28 2:01
- * @description
+ * author Allen.Shen
+ * createTime 2023/5/28 2:01
+ * description
  */
 @Slf4j
 public class RestAssuredTool {
@@ -139,8 +139,8 @@ public class RestAssuredTool {
         Allure.addAttachment("cookies ",cookies.toString());
         Allure.addAttachment("http响应码 ", String.valueOf(response.statusCode()));
         Allure.addAttachment("接口返回体 ",response.asString());
-        log.info("cookies ",cookies);
-        log.info("请求路径 ",url);
+        log.info("-----cookies-----"+cookies);
+        log.info("-----请求路径------ "+url);
         log.info("http响应码==> "+response.statusCode());
         log.info("接口返回体==> "+response.asString());
         return response.asString();
@@ -178,10 +178,11 @@ public class RestAssuredTool {
         try {
             clazz = Class.forName(stackTraceElement.getClassName());
             methods = clazz.getMethods();
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
         HttpMethodEnum httpMethod = null;
         String description = "";
+        assert methods != null;
         for (Method method : methods) {
             if (method.getName().equals(stackTraceElement.getMethodName())) {
                 httpMethod = method.getAnnotation(HttpBase.class).httpMethod();

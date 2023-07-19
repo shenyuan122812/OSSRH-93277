@@ -5,9 +5,9 @@
 //import org.testng.TestListenerAdapter;
 //
 ///**
-// * @author Allen.Shen
-// * @createTime 2023/5/28 5:27
-// * @description
+// * author Allen.Shen
+// * createTime 2023/5/28 5:27
+// * description
 // */
 //
 //public class CustomListener extends TestListenerAdapter {

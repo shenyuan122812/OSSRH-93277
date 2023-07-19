@@ -8,9 +8,9 @@ import org.jtar.database.DataBaseDTO;
 import org.jtar.database.DbConfiguration;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/12 5:11
- * @description 检查数据库配置
+ * author Allen.Shen
+ * createTime 2023/6/12 5:11
+ * description 检查数据库配置
  */
 
 

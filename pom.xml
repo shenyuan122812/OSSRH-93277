@@ -3,16 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>io.github</groupId>
-    <artifactId>shenyuan122812</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>io.github.shenyuan122812</groupId>
+    <artifactId>jtar</artifactId>
+    <version>0.0.1</version>
+    <name>jtar</name>
+    <description>This is an interface automation framework.</description>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.test.skip>true</maven.test.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.javadoc.skip>false</maven.javadoc.skip>
     </properties>
     <dependencies>
         <dependency>
@@ -34,7 +35,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.8.0</version>
+            <version>7.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
@@ -116,10 +117,11 @@
             <artifactId>reflections</artifactId>
             <version>0.9.11</version>
         </dependency>
+
     </dependencies>
 
     <!--项目地址-->
-    <url>https://github.com/shenyuan122812/Jtar</url>
+    <url>https://github.com/shenyuan122812/OSSRH-93277</url>
 
     <!--开发者信息-->
     <developers>
@@ -132,6 +134,7 @@
             </roles>
             <timezone>+8</timezone>
         </developer>
+
     </developers>
 
     <!--开源协议...-->
@@ -147,71 +150,83 @@
 
     <!--项目在github或其它托管平台的地址-->
     <scm>
-        <connection>https://github.com/shenyuan122812/OSSRH-93277</connection>
+        <connection>https://github.com/shenyuan122812/OSSRH-93277.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:shenyuan122812/OSSRH-93277.git</developerConnection>
-        <url>https://github.com/shenyuan122812/OSSRH-93277/tree/master</url>
+        <url>https://github.com/shenyuan122812/OSSRH-93277/tree/main</url>
     </scm>
 
+    <profiles>
+        <profile>
+            <!--注意,此id必须与setting.xml中指定的一致,不要自作聪明改它名字-->
+            <id>release</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <!--发布到中央SNAPSHOT仓库插件-->
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <configuration>
-                    <additionalJOptions>
-                        <additionalJOption>-Xdoclint:none</additionalJOption>
-                    </additionalJOptions>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.2</version>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <!--注意,此id必须与setting.xml中指定的一致-->
+                    <id>release</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>release</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+
+    </profiles>
 
 
 </project>

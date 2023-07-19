@@ -5,9 +5,9 @@ import lombok.Data;
 import org.jtar.annotations.DBEnum;
 
 /**
- * @author Allen.Shen
- * @createTime 2023/6/12 11:58
- * @description 数据库类
+ * author Allen.Shen
+ * createTime 2023/6/12 11:58
+ * description 数据库类
  */
 @Data
 public class DataBaseDTO {
