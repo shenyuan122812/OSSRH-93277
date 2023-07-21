@@ -5,7 +5,7 @@ project:
    tester: 沈源
    host: https://www.wanandroid.com
    paths:
-     testcase: org\jtar\testcase
+     testcase: org\test\testcase
      data: data
      files: files
 

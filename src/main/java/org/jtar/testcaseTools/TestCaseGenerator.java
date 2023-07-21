@@ -176,8 +176,10 @@ public class TestCaseGenerator {
                     BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
                     String property = System.getProperty("user.dir");
                      String replace=file2.getParent().replace(property+"", "").replace("\\",".").replace(".src.main.java.","");
-                    String content =TestCaseTemplate.getTemplate(replace,file2.getName().replace(".java",""));
-                       writer.write(content);
+                    Object valueByKey = new YamlReader(FileType.DATA_YAML, file2.getPath()).getValueByKey("caseCommon");
+                    System.out.println(valueByKey);
+                    String content =TestCaseTemplate.getTemplate(replace,file2.getName().replace(".java",""),null);
+                    writer.write(content);
                     writer.close();
                 } else {
                     log.error("{"+file2.getName()+"}文件创建失败");
@@ -187,6 +189,12 @@ public class TestCaseGenerator {
             }
         }
 
+    }
+
+    public static void main(String[] args) {
+
+        String s = achieveDataYamlPath();
+        System.out.println(s);
     }
 
     /**

@@ -1,5 +1,7 @@
 package org.jtar.testcaseTools;
 
+import java.util.List;
+
 /**
  * author Allen.Shen
  * createTime 2023/6/12 5:26
@@ -8,8 +10,10 @@ package org.jtar.testcaseTools;
 
 public class TestCaseTemplate {
 
-    public static  String  getTemplate(String packageName,String clazzName){
-    return "package "+packageName+";\n" +
+    public static  String  getTemplate(String packageName, String clazzName, List<String> methodNameList){
+
+
+   String template= "package "+packageName+";\n" +
             "\n" +
             "\n" +
             "import io.qameta.allure.*;\n" +
@@ -41,15 +45,17 @@ public class TestCaseTemplate {
             "    @Link(value = \"百度登录页面\",name = \"百度登录页面\",url = \"https://www.baidu.com\")\n" +
             "    @Issue(\"一个bug\")\n" +
             "    @TmsLink(\"https://www.baidu.com\")\n" +
-            "    @BindContent(caseId = \"login_01\",uploadFileName = \"test.xlsx\")\n" +
+            "    @BindContent(caseId = \""+methodNameList+"\",uploadFileName = \"test.xlsx\")\n" +
             "    public  void  login_01(){\n" +
             "\n" +
-            "        Map<String, String> dataMap = AnnotationUtils.getBindContent("+clazzName+".class, \"login_01\");\n" +
+            "        Map<String, String> dataMap = AnnotationUtils.getBindContent("+clazzName+".class, \"+"+methodNameList+"\");\n" +
             "        TestCaseDto testCaseDto = TestCaseGenerator.init(dataMap);\n" +
             "        RestAssuredTool.init(testCaseDto);\n" +
             "\n" +
             "    }\n" +
             "\n" +
             "}";
+
+   return  template;
     }
 }

@@ -35,7 +35,7 @@ public class YamlReader {
     public  YamlReader(FileType fileType,String path){
         if (fileType.equals(FileType.DATA_YAML)){
             File file = new File(path);
-            Yaml yaml = new Yaml();;
+            Yaml yaml = new Yaml();
             try {
                 properties= yaml.loadAs(new FileInputStream(file),HashMap.class);
             } catch (FileNotFoundException e) {
@@ -73,7 +73,7 @@ public class YamlReader {
 
     public static void main(String[] args) {
 //        project信息
-        System.out.println(new YamlReader(FileType.APPLICATION_YAML).getValueByKey("project.name"));
+        System.out.println(new YamlReader(FileType.DATA_YAML).getValueByKey("project.name"));
 
 
     }
